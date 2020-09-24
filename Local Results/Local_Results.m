@@ -1,7 +1,7 @@
-function [evap,vevap] = Local_Results(Ta,T,P,RH,RHe,dmody,L)
+function [evap,vevap] = Local_Results(Te,RHe,T,P,RH,dmody,L)
 
     ABST = T + 273;
-    ABSTA = Ta + 273;
+    ABSTA = Te + 273;
     D12 = 4.14*exp(0.0061*ABST)*10^-6; % T is in terms of Kelvin, coefficient in terms of m^2/s
     Psat = exp(20.386-5132/ABST)*133.32; %N/M^2
     Psate = exp(20.386-5132/ABSTA)*133.32; %N/M^2
@@ -24,7 +24,8 @@ function [evap,vevap] = Local_Results(Ta,T,P,RH,RHe,dmody,L)
     Ram = Gr*Sc;
     Sh = Ram^(1/3);
     gs = rho*D12*Sh/L;
-    B = (m1s - m1e)/(1 - m1s);
+    B = (m1s - m1e)/(1 - m1s);`
+    disp(Gr);
     evap = -rho*D12/(1-m1)*dmody;
     vevap = B*gs;
 
