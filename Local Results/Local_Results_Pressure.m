@@ -1,5 +1,9 @@
-function evap = Local_Results_Pressure(Ta,Pa,Tw,Pw,gogs)
+function evap = Local_Results_Pressure(Ta,Tw,Pw_minus_Pa,V)
     % The correcting factor for V=0.101 is 0.233
+    % V = 0.194 0.257
+    % V = 0.308 0.31
+    Pa = 1000000;
+    Pw = Pw_minus_Pa + Pa;
     L = 1;
     ABST = Tw;
     ABSTA = Ta;
@@ -24,6 +28,7 @@ function evap = Local_Results_Pressure(Ta,Pa,Tw,Pw,gogs)
     Sh = Ram^(1/3);
     gs = rho*D12*Sh/L;
     B = (m1s - m1e)/(1 - m1s);
+    gogs = 0.2581*V + 0.2069
     evap = B*gs*gogs;
 
 end
