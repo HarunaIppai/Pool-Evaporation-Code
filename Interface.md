@@ -13,3 +13,28 @@ There are four files in the folder *Local Results*, Corresponding to different f
 
 ## Function Return and its variables
 
+`Local_Results(Te,RHe,T,P,RH,dmody,L)`
+
+**Input**: 
+Te: Environment Temperature, in C
+RHe: Environment relative Humidity, in unit 1
+T: Water Temperature, in C
+P: Air pressure, in Pa
+RH: Surface relative humidity, in unit 1
+dmody: Vapor diffusion gradient, in g/m
+L: Characteristic length, any input other than zero is fine
+
+**Return**: 
+The function returns the general solution and limited solution (sequentially in an array) evaporation rate in `g/(s m^2)`
+
+`Local_Results_Pressure(Ta,Tw,Pw_minus_Pa,V)`
+
+**Input**: 
+Ta: Ambient Temperature, in K
+Tw: Water Temperature, in K
+Pw_minus_Pa: Pressure difference, in Pa
+V: Flow speed, in m/s
+
+**Return**: 
+The function returns the evaporation rate in `g/(s m^2)`
+
