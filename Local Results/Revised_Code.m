@@ -29,7 +29,7 @@ function evap = Revised_Code(Ta,Tw,Pw_minus_Pa,V)
     % 0.09738*ABST-22.5756 instead of constant 1.8. The possible
     % explanation is that Raimundo's experiment does not cover a high
     % temperature range
-    gogs = 1.8*log(1+B)/B;
-    evap = B*gs*gogs+0.156*V;
+    gogs = 1.8*log(1+B)/B+0.156*V/gs/B;
+    evap = B*gs*gogs;
 
 end
